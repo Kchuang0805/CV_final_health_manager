@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- 
+      Viewport settings for mobile responsiveness.
+      user-scalable=no prevents zooming, making it feel like a native app.
+      設定移動裝置的視窗顯示。
+      user-scalable=no 禁止使用者縮放，讓網頁操作起來更像原生 App。
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    
+    <!-- Theme color for browser address bar (matches brand color). -->
+    <!-- 瀏覽器網址列的主題顏色 (配合品牌色)。 -->
+    <meta name="theme-color" content="#ea580c" />
+    
+    <!-- iOS specific meta tags for PWA (Progressive Web App) behavior. -->
+    <!-- iOS 特有的 PWA 設定，讓網頁加入主畫面後可以全螢幕執行。 -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <title>MediCare Connect</title>
+    
+    <!-- Link to the PWA manifest file. -->
+    <!-- 連結 PWA 設定檔 (manifest.json)。 -->
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Tailwind CSS for styling. -->
+    <!-- 引入 Tailwind CSS 樣式庫。 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter. -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f3f4f6;
+        /* Removes the tap highlight color on mobile devices. */
+        /* 移除手機上點擊時的灰色高亮背景。 */
+        -webkit-tap-highlight-color: transparent;
+      }
+      /* Prevent pull-to-refresh on mobile to feel more like an app. */
+      /* 防止手機上下拉動重新整理頁面，提供更像 App 的體驗。 */
+      overscroll-behavior-y: none;
+    </style>
+    
+  <!-- Import Map: Defines where to load external modules from. -->
+  <!-- Import Map: 定義從哪裡載入外部模組 (例如 React 和 Google GenAI SDK)。 -->
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <!-- The container where React renders the app. -->
+    <!-- React 渲染應用程式的容器。 -->
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
