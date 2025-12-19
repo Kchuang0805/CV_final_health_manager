@@ -1,0 +1,8 @@
+{
+  "name": "line version MediCare Connect",
+  "description": "A smart medication management app connecting doctors/family with patients. Features AI-powered pill verification, audio reminders from loved ones, and easy schedule management.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
